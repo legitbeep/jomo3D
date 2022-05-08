@@ -72,3 +72,36 @@ export const magic = new MagicConnector({
 export const portis = new PortisConnector({ dAppId: process.env.PORTIS_DAPP_ID as string, networks: [1, 100] })
 
 export const torus = new TorusConnector({ chainId: 1 })
+
+
+export enum ConnectorNames {
+  Injected,
+  Network,
+  WalletConnect,
+  WalletLink,
+  Ledger,
+  Trezor,
+  Lattice,
+  Frame,
+  Authereum,
+  Fortmatic,
+  Magic,
+  Portis,
+  Torus
+}
+
+export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
+  [ConnectorNames.Injected]: injected,
+  [ConnectorNames.Network]: network,
+  [ConnectorNames.WalletConnect]: walletconnect,
+  [ConnectorNames.WalletLink]: walletlink,
+  [ConnectorNames.Ledger]: ledger,
+  [ConnectorNames.Trezor]: trezor,
+  [ConnectorNames.Lattice]: lattice,
+  [ConnectorNames.Frame]: frame,
+  [ConnectorNames.Authereum]: authereum,
+  [ConnectorNames.Fortmatic]: fortmatic,
+  [ConnectorNames.Magic]: magic,
+  [ConnectorNames.Portis]: portis,
+  [ConnectorNames.Torus]: torus
+}
