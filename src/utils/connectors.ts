@@ -11,15 +11,15 @@ import { TorusConnector } from '@web3-react/torus-connector'
 import { TrezorConnector } from '@web3-react/trezor-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { WalletLinkConnector } from '@web3-react/walletlink-connector'
-import { BscConnector } from '@binance-chain/bsc-connector'
+// import { BscConnector } from '@binance-chain/bsc-connector'
 
 const POLLING_INTERVAL = 12000
 const RPC_URLS: { [chainId: number]: string } = {
-  1: process.env.RPC_URL_1 as string,
-  4: process.env.RPC_URL_4 as string
+  1: process.env.NEXT_PUBLIC_RPC_URL_1 as string,
+  4: process.env.NEXT_PUBLIC_RPC_URL_4 as string
 }
 
-export const bscConnector = new BscConnector({ supportedChainIds: [56,97] })
+// export const bscConnector = new BscConnector({ supportedChainIds: [56,97] })
 
 export const injected = new InjectedConnector({ supportedChainIds: [1, 3, 4, 5, 42] })
 
@@ -48,7 +48,7 @@ export const trezor = new TrezorConnector({
   url: RPC_URLS[1],
   pollingInterval: POLLING_INTERVAL,
   manifestEmail: 'dummy@abc.xyz',
-  manifestAppUrl: 'http://localhost:1234'
+  manifestAppUrl: 'http://localhost:3000'
 })
 
 export const lattice = new LatticeConnector({
@@ -88,6 +88,7 @@ export enum ConnectorNames {
   Magic,
   Portis,
   Torus
+  // BSC 
 }
 
 export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
