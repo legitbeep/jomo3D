@@ -5,7 +5,7 @@ import {
 } from '@web3-react/injected-connector'
 import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } from '@web3-react/walletconnect-connector'
 import { UserRejectedRequestError as UserRejectedRequestErrorFrame } from '@web3-react/frame-connector'
-import { Web3Provider } from '@ethersproject/providers'
+import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 
 export function getErrorMessage(error: Error) {
     if (error instanceof NoEthereumProviderError) {
@@ -29,3 +29,12 @@ export function getLibrary(provider: any): Web3Provider {
     library.pollingInterval = 12000
     return library
   }
+
+export function parseAccount(account: string,chars=4) {
+  return `${account.substring(0, chars + 2)}...${account.substring(42 - chars)}`
+}
+
+// account is not optional
+export function getSigner(library: Web3Provider, account: string): JsonRpcSigner {
+  return library.getSigner(account).connectUnchecked()
+}

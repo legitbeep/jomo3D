@@ -21,41 +21,41 @@ const RPC_URLS: { [chainId: number]: string } = {
 
 // export const bscConnector = new BscConnector({ supportedChainIds: [56,97] })
 
-export const injected = new InjectedConnector({ supportedChainIds: [1, 3, 4, 5, 42] })
+export const injected = new InjectedConnector({ supportedChainIds: [1, 3, 4, 5, 42] });
 
-export const network = new NetworkConnector({
-  urls: { 1: RPC_URLS[1], 4: RPC_URLS[4] },
-  defaultChainId: 1
-})
+// export const network = new NetworkConnector({
+//   urls: { 1: RPC_URLS[1], 4: RPC_URLS[4] },
+//   defaultChainId: 1
+// });
 
-export const walletconnect = new WalletConnectConnector({
-  rpc: RPC_URLS,
-  chainId: 1,
-  bridge: 'https://bridge.walletconnect.org',
-  qrcode: true
-})
+// export const walletconnect = new WalletConnectConnector({
+//   rpc: RPC_URLS,
+//   chainId: 1,
+//   bridge: 'https://bridge.walletconnect.org',
+//   qrcode: true
+// });
 
-export const walletlink = new WalletLinkConnector({
-  url: RPC_URLS[1],
-  appName: 'web3-react example',
-  supportedChainIds: [1, 3, 4, 5, 42, 10, 137, 69, 420, 80001]
-})
+// export const walletlink = new WalletLinkConnector({
+//   url: RPC_URLS[1],
+//   appName: 'web3-react example',
+//   supportedChainIds: [1, 3, 4, 5, 42, 10, 137, 69, 420, 80001]
+// })
 
-export const ledger = new LedgerConnector({ chainId: 1, url: RPC_URLS[1], pollingInterval: POLLING_INTERVAL })
+// export const ledger = new LedgerConnector({ chainId: 1, url: RPC_URLS[1], pollingInterval: POLLING_INTERVAL })
 
-export const trezor = new TrezorConnector({
-  chainId: 1,
-  url: RPC_URLS[1],
-  pollingInterval: POLLING_INTERVAL,
-  manifestEmail: 'dummy@abc.xyz',
-  manifestAppUrl: 'http://localhost:3000'
-})
+// export const trezor = new TrezorConnector({
+//   chainId: 1,
+//   url: RPC_URLS[1],
+//   pollingInterval: POLLING_INTERVAL,
+//   manifestEmail: 'dummy@abc.xyz',
+//   manifestAppUrl: 'http://localhost:3000'
+// })
 
-export const lattice = new LatticeConnector({
-  chainId: 4,
-  appName: 'web3-react',
-  url: RPC_URLS[4]
-})
+// export const lattice = new LatticeConnector({
+//   chainId: 4,
+//   appName: 'web3-react',
+//   url: RPC_URLS[4]
+// })
 
 export const frame = new FrameConnector({ supportedChainIds: [1] })
 
@@ -76,12 +76,12 @@ export const torus = new TorusConnector({ chainId: 1 })
 
 export enum ConnectorNames {
   Injected,
-  Network,
-  WalletConnect,
-  WalletLink,
-  Ledger,
-  Trezor,
-  Lattice,
+  // Network,
+  // WalletConnect,
+  // WalletLink,
+  // Ledger,
+  // Trezor,
+  // Lattice,
   Frame,
   Authereum,
   Fortmatic,
@@ -93,12 +93,12 @@ export enum ConnectorNames {
 
 export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.Injected]: injected,
-  [ConnectorNames.Network]: network,
-  [ConnectorNames.WalletConnect]: walletconnect,
-  [ConnectorNames.WalletLink]: walletlink,
-  [ConnectorNames.Ledger]: ledger,
-  [ConnectorNames.Trezor]: trezor,
-  [ConnectorNames.Lattice]: lattice,
+  // [ConnectorNames.Network]: network,
+  // [ConnectorNames.WalletConnect]: walletconnect,
+  // [ConnectorNames.WalletLink]: walletlink,
+  // [ConnectorNames.Ledger]: ledger,
+  // [ConnectorNames.Trezor]: trezor,
+  // [ConnectorNames.Lattice]: lattice,
   [ConnectorNames.Frame]: frame,
   [ConnectorNames.Authereum]: authereum,
   [ConnectorNames.Fortmatic]: fortmatic,
